@@ -31,6 +31,10 @@ const Home =()=>{
             </div>
         </div>
 
+        <div className='container_rodape'>
+            
+        </div>
+
         </div>
 
     )

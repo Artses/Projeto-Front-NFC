@@ -8,24 +8,21 @@ const Cadastro = () =>{
           <p>Faça seu cadastro para utilizar o sistema</p>
         </div>
         <form action="" >
-          <div className='titulo'>
-            <h1>Cadastro</h1>
-            <p>Já tem conta? <Link to="/">Entre aqui</Link></p>
-          </div>
-
+          <h1>CADASTRO</h1>
           <div className='nome_form'>
             <input type="text" name='name' placeholder='Nome' />
             <input type="email" name='email' placeholder='E-mail' />
+            <input type="email" name='email' placeholder='Confirmar E-mail' />
           </div>
-
-          <div className='doisxdois'>
-            <input type="text" name='cep' placeholder='CEP'/>
-            <input type="text" name='cnpj' placeholder='CNPJ' />
+            <div className='doisxdois'>
             <input type="password" name='password' placeholder='Senha' />
             <input type="password" name='password' placeholder='Confirmar senha' />
           </div>
           <button type='button' className='button-37'>Cadastrar</button>
+
+          <p>Já tem conta? <Link to="/">Entre aqui</Link></p>
         </form>
+
       </div>
 
     )

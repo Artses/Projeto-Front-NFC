@@ -20,7 +20,7 @@
 .container_home{
     background-color: white;
     margin-top: 1em;
-    height: 100vh;
+    height: 88vh;
     max-width: 100vw;
 }
 .perfil{
@@ -53,4 +53,9 @@
     font-size: 1.1rem;
     color: #333;
     }
+}
+.container_rodape{
+    background-color: #159782;
+    width: 100vw;
+    height: 40vh;
 }
