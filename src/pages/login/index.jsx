@@ -14,22 +14,27 @@ function Login() {
   
   const handleLogin = async () => {
     try {
-      // Fazendo a requisição POST para a API com nome e senha
       const response = await axios.post('https://projeto-api-nfc-production.up.railway.app/auth/Login', {
         email: email,
         senha: senha
       });
-
-      // Verificando se o login foi bem-sucedido
       if (response.status === 201) {
-        console.log("Login bem-sucedido");
-        navigate('/Home'); // Redireciona para a página home após o login
+        const token = response.data.token;
+        if (token) {
+          localStorage.setItem('authToken', token);
+          console.log("Login bem-sucedido, token armazenado.");
+          navigate('/Home');
+        } else {
+          console.error("Token não recebido.");
+          alert("Erro ao receber token!");
+        }
       }
     } catch (error) {
       console.error("Erro ao fazer login", error);
       alert("Email ou senha incorretos!");
     }
   };
+  
   console.log("Email:", email);
   console.log("Senha:", senha);
 
