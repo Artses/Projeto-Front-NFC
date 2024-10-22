@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
-import Cookies from 'js-cookie';
 
 import Pc from '../../assets/pc_img_login.png'
 function Login() {
@@ -15,26 +14,24 @@ function Login() {
   
   const handleLogin = async () => {
     try {
-      const response = await axios.post('https://projeto-api-nfc-production.up.railway.app/auth/Login', {
-        email: email,
-        senha: senha
-      });
-  
-      if (response.status === 201) {
-        const token = response.data.token; // Captura o token retornado pela API
-        Cookies.set('jwt', token, { expires: 7 });  // Armazena o token no cookie por 1 dia
-  
-        console.log("Login bem-sucedido");
-        navigate('/Home');
+      const response = await axios.post(
+        'https://projeto-api-nfc-production.up.railway.app/auth/login',
+        { email: email, senha: senha },
+        { withCredentials: true }  
+      );
+
+      if (!response || response === undefined) {
+       throw new Error('Erro de servidor')
       }
+      
+      console.log('Login bem-sucedido!');
+      navigate('/home'); 
+      
     } catch (error) {
       console.error("Erro ao fazer login", error);
       alert("Email ou senha incorretos!");
     }
   };
-  
-  console.log("Email:", email);
-  console.log("Senha:", senha);
 
   return (
     

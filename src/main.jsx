@@ -5,7 +5,6 @@ import Login from './pages/login';
 import Cadastro from './pages/cadastro/Cadastro';
 import Home from './pages/home/Home';
 import View from './pages/view/View';
-import ProtectedRoute from './ProtectedRoute.jsx';
 import './index.css';
 
 const router = createBrowserRouter([
@@ -20,17 +19,13 @@ const router = createBrowserRouter([
   {
     path: '/Home',
     element: (
-      <ProtectedRoute>
         <Home />
-      </ProtectedRoute>
     ),
   },
   {
     path: '/View',
     element: (
-      <ProtectedRoute>
         <View />
-      </ProtectedRoute>
     ),
   },
 ]);
