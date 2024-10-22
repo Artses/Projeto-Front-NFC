@@ -5,7 +5,7 @@ import Login from './pages/login';
 import Cadastro from './pages/cadastro/Cadastro';
 import Home from './pages/home/Home';
 import View from './pages/view/View';
-import ProtectedRoute from './autenticacao_rotas';
+import ProtectedRoute from './ProtectedRoute.jsx';
 import './index.css';
 
 const router = createBrowserRouter([
